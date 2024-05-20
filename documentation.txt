@@ -1,0 +1,51 @@
+App Overview
+LocalEchoes is a react-native app developed in Expo. It is an interactive storytelling platform where users can explore audio stories tied to specific geographical locations. It leverages modern mobile development technologies for a rich and engaging user experience.
+
+Main Features
+Interactive Map View: Users can explore a map with pins (markers) representing different audio stories at various locations.
+List View: A list representation of stories, offering an alternative way to browse stories besides the map.
+Audio Playback: Each story comes with an audio file that users can listen to, providing an immersive storytelling experience.
+Dynamic Filtering: Users can filter stories based on specific criteria like source and minimum interestingness rating.
+Screens and Functions
+MapScreen
+
+Functionality: Displays a map with markers for each story. Users can tap on these markers to access individual stories.
+Implementation:
+Uses react-native-map-clustering for efficient marker management.
+Integrates with StoriesContext to filter stories based on user-selected criteria.
+Navigation to individual story details is handled through react-navigation.
+ListScreen
+
+Functionality: Shows a list view of stories, allowing users to select and view details of a story.
+Implementation:
+Each story in the list is interactive and navigates to detailed story view on selection.
+Also uses StoriesContext for filtering stories.
+Implemented using ScrollView for a simple and effective list layout.
+StoryScreen
+
+Functionality: Displays detailed information about a selected story, including playing the audio file.
+Implementation:
+Renders story details like title and description.
+Includes an AudioPlayer component for handling audio playback.
+Uses context to retrieve story data.
+AudioPlayer
+
+Functionality: A custom-built audio player integrated into the StoryScreen for audio playback.
+Implementation:
+Controls for play, pause, skip, and a clickable progress bar.
+Handles audio sources from both local and remote (Firebase) storage.
+FilterComponent (Planned/In Progress)
+
+Functionality: Provides a unified interface for filtering stories on both MapScreen and ListScreen.
+Implementation:
+A reusable component to maintain consistent filtering functionality across different screens.
+Utilizes context to manage and apply filter criteria.
+Context and State Management
+StoriesContext: Centralizes the management of stories data and filter states. It ensures that the filtering criteria are consistent across different screens and that the stories are updated accordingly.
+Navigation
+React Navigation: Manages the app's screen navigation, enabling smooth transitions between map view, list view, and individual story details.
+Additional Implementation Details
+Firebase Integration: For backend services like fetching story data and storing audio files.
+Responsive Design: Ensures that the app provides a seamless experience across different device sizes.
+Summary
+The app stands out for its interactive and engaging approach to storytelling, combining audio content with geographical mapping. The use of context for state management and react-navigation for screen transitions provides a smooth and cohesive user experience. The planned introduction of a unified filter component will further enhance the app's functionality, making story discovery more user-friendly and accessible.
